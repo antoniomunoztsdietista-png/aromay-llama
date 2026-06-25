@@ -13,7 +13,8 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Aroma y Llama • Velas Artesanales de Cera de Soja en Murcia">
     <meta property="og:description" content="Velas únicas hechas a mano con cera de soja natural. Cada pieza lleva intención y calma. Descubre tu rincón favorito.">
-    <meta property="og:image" content="images-webp/10.webp">
+    <!-- Cambia esta URL por la absoluta de tu web cuando la tengas publicada (ej: https://tuusuario.github.io/aroma-y-llama/images-webp/10.webp) -->
+    <meta property="og:image" content="https://tuusuario.github.io/aroma-y-llama/images-webp/10.webp">
     <meta property="og:url" content="https://aromayllama.es">
     <meta property="og:site_name" content="Aroma y Llama">
     
@@ -21,7 +22,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Aroma y Llama • Velas Artesanales Murcia">
     <meta name="twitter:description" content="Velas de soja hechas con amor en Murcia. Piezas decorativas únicas y aromáticas.">
-    <meta name="twitter:image" content="images-webp/10.webp">
+    <meta name="twitter:image" content="https://tuusuario.github.io/aroma-y-llama/images-webp/10.webp">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images-webp/10.webp">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -302,15 +306,8 @@
                     </div>
                 </div>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-                    <a href="#inicio" onclick="event.preventDefault(); document.getElementById('inicio').scrollIntoView({behavior:'smooth'})" class="nav-link text-[#5c4033] hover:text-[#d17a7a]">Inicio</a>
-                    <a href="#historia" onclick="event.preventDefault(); document.getElementById('historia').scrollIntoView({behavior:'smooth'})" class="nav-link text-[#5c4033] hover:text-[#d17a7a]">Nuestra Historia</a>
-                    <a href="#tienda" onclick="event.preventDefault(); document.getElementById('tienda').scrollIntoView({behavior:'smooth'})" class="nav-link text-[#5c4033] hover:text-[#d17a7a]">Nuestras Velas</a>
-                    <a href="#por-que" onclick="event.preventDefault(); document.getElementById('por-que').scrollIntoView({behavior:'smooth'})" class="nav-link text-[#5c4033] hover:text-[#d17a7a]">Por Qué Elegirnos</a>
-                    <a href="#blog" onclick="event.preventDefault(); document.getElementById('blog').scrollIntoView({behavior:'smooth'})" class="nav-link text-[#5c4033] hover:text-[#d17a7a]">El Rincón</a>
-                    <a href="#faq" onclick="event.preventDefault(); document.getElementById('faq').scrollIntoView({behavior:'smooth'})" class="nav-link text-[#5c4033] hover:text-[#d17a7a]">Preguntas</a>
-                </div>
+                <!-- Desktop Menu (simplificado) -->
+                <!-- Solo queda el botón de WhatsApp -->
 
                 <!-- Actions -->
                 <div class="flex items-center gap-x-3">
@@ -333,32 +330,24 @@
     </nav>
 
     <!-- MOBILE MENU -->
+    <!-- Menú móvil simplificado (solo WhatsApp) -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-[#f8d7d7]">
-        <div class="px-6 py-6 flex flex-col gap-y-4 text-sm font-medium">
-            <a href="#inicio" onclick="event.preventDefault(); document.getElementById('inicio').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu').classList.add('hidden');" class="mobile-link py-2">Inicio</a>
-            <a href="#historia" onclick="event.preventDefault(); document.getElementById('historia').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu').classList.add('hidden');" class="mobile-link py-2">Nuestra Historia</a>
-            <a href="#tienda" onclick="event.preventDefault(); document.getElementById('tienda').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu').classList.add('hidden');" class="mobile-link py-2">Nuestras Velas</a>
-            <a href="#por-que" onclick="event.preventDefault(); document.getElementById('por-que').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu').classList.add('hidden');" class="mobile-link py-2">Por Qué Elegirnos</a>
-            <a href="#blog" onclick="event.preventDefault(); document.getElementById('blog').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu').classList.add('hidden');" class="mobile-link py-2">El Rincón</a>
-            <a href="#faq" onclick="event.preventDefault(); document.getElementById('faq').scrollIntoView({behavior:'smooth'}); document.getElementById('mobile-menu').classList.add('hidden');" class="mobile-link py-2">Preguntas Frecuentes</a>
-            
-            <div class="pt-4 border-t border-[#f8d7d7]">
-                <a href="https://wa.me/34622123456?text=Hola%20Aroma%20y%20Llama%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20vuestras%20velas" 
-                   target="_blank"
-                   class="flex items-center justify-center gap-x-2 w-full py-3.5 bg-[#25D366] text-white rounded-3xl font-semibold">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>Escribir por WhatsApp</span>
-                </a>
-            </div>
+        <div class="px-6 py-6">
+            <a href="https://wa.me/34622123456?text=Hola%20Aroma%20y%20Llama%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20vuestras%20velas" 
+               target="_blank"
+               class="flex items-center justify-center gap-x-2 w-full py-3.5 bg-[#25D366] text-white rounded-3xl font-semibold">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Escribir por WhatsApp</span>
+            </a>
         </div>
     </div>
 
     <!-- HERO -->
-    <section id="inicio" class="relative min-h-[100dvh] flex items-center justify-center bg-[#f9f5f0] overflow-hidden">
+    <section id="inicio" class="relative min-h-[60vh] md:min-h-[100dvh] flex items-center justify-center bg-[#f9f5f0] overflow-hidden">
         <!-- Background with subtle pattern -->
         <div class="absolute inset-0 bg-[radial-gradient(#f8d7d7_0.8px,transparent_1px)] bg-[length:4px_4px] opacity-40"></div>
         
-        <div class="max-w-5xl mx-auto px-6 relative z-10 text-center pt-12 pb-16">
+        <div class="max-w-5xl mx-auto px-6 relative z-10 text-center pt-8 pb-8 md:pt-12 md:pb-16">
             <div class="inline-flex items-center gap-x-2 bg-white/80 backdrop-blur px-4 py-1.5 rounded-full text-sm mb-6 border border-[#f8d7d7]">
                 <div class="w-2 h-2 bg-[#d17a7a] rounded-full animate-pulse"></div>
                 <span class="font-medium text-[#5c4033]">Hecho con amor en Murcia</span>
@@ -387,7 +376,7 @@
                 </a>
             </div>
             
-            <div class="mt-16 flex justify-center">
+            <div class="mt-8 hidden md:flex justify-center">
                 <div class="flex items-center gap-x-2 text-sm text-[#8c6f5e]">
                     <span>Desliza para descubrir</span>
                     <i class="fa-solid fa-chevron-down animate-bounce"></i>
@@ -702,29 +691,29 @@
             <div class="grid md:grid-cols-5 gap-8">
                 <!-- Form -->
                 <div class="md:col-span-3 bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-[#f8d7d7]">
-                    <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                    <form action="https://formspree.io/f/xzdleark" method="POST">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
                                 <label class="block text-sm font-medium mb-1.5">Nombre</label>
-                                <input type="text" id="name" required 
+                                <input type="text" name="nombre" required 
                                        class="w-full px-5 py-3.5 rounded-2xl border border-[#f8d7d7] focus:border-[#d17a7a] outline-none transition">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium mb-1.5">Teléfono / WhatsApp</label>
-                                <input type="tel" id="phone" required 
+                                <input type="tel" name="telefono" required 
                                        class="w-full px-5 py-3.5 rounded-2xl border border-[#f8d7d7] focus:border-[#d17a7a] outline-none transition">
                             </div>
                         </div>
                         
                         <div class="mt-5">
                             <label class="block text-sm font-medium mb-1.5">Email</label>
-                            <input type="email" id="email" required 
+                            <input type="email" name="email" required 
                                    class="w-full px-5 py-3.5 rounded-2xl border border-[#f8d7d7] focus:border-[#d17a7a] outline-none transition">
                         </div>
                         
                         <div class="mt-5">
                             <label class="block text-sm font-medium mb-1.5">Producto de interés</label>
-                            <select id="product-interest" class="w-full px-5 py-3.5 rounded-2xl border border-[#f8d7d7] focus:border-[#d17a7a] outline-none transition bg-white">
+                            <select name="producto" class="w-full px-5 py-3.5 rounded-2xl border border-[#f8d7d7] focus:border-[#d17a7a] outline-none transition bg-white">
                                 <option value="">Selecciona una opción...</option>
                                 <option value="Vela Corazón Rosa">Vela Corazón Rosa</option>
                                 <option value="Vela Oso Rosa">Vela Oso Rosa</option>
@@ -738,8 +727,17 @@
                         
                         <div class="mt-5">
                             <label class="block text-sm font-medium mb-1.5">Mensaje</label>
-                            <textarea id="message" rows="4" required placeholder="Cuéntame qué vela te gustaría o si buscas algo personalizado..."
+                            <textarea name="mensaje" rows="4" required placeholder="Cuéntame qué vela te gustaría o si buscas algo personalizado..."
                                       class="w-full px-5 py-3.5 rounded-2xl border border-[#f8d7d7] focus:border-[#d17a7a] outline-none transition resize-y"></textarea>
+                        </div>
+
+                        <!-- Consentimiento RGPD -->
+                        <div class="mt-5 flex items-start gap-3">
+                            <input type="checkbox" name="consentimiento" id="consent" required class="mt-1.5 w-4 h-4 accent-[#d17a7a]">
+                            <label for="consent" class="text-sm text-[#5c4033]">
+                                Acepto que mis datos sean tratados según la 
+                                <a href="#" onclick="showPrivacyModal(); return false;" class="underline text-[#d17a7a]">Política de Privacidad</a>.
+                            </label>
                         </div>
                         
                         <button type="submit" 
