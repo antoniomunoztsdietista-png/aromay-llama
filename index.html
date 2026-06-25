@@ -795,6 +795,7 @@
             <div class="flex justify-center gap-x-6 text-sm mb-8">
                 <a href="#" class="hover:text-white transition">Instagram</a>
                 <a href="#" class="hover:text-white transition">Wallapop</a>
+                <a href="#" onclick="showCookiesModal(); return false;" class="hover:text-white transition">Política de Cookies</a>
             </div>
             
             <div class="text-xs text-[#d4b9a3]">
@@ -894,6 +895,50 @@
                         class="px-6 py-2.5 rounded-2xl bg-white border border-[#d17a7a] hover:bg-[#f8d7d7] text-sm font-semibold flex items-center gap-2 transition">
                     <i class="fa-brands fa-whatsapp"></i>
                     <span>Compartir por WhatsApp</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Política de Cookies -->
+    <div id="cookies-modal" onclick="if (event.target.id === 'cookies-modal') closeCookiesModal()" 
+         class="hidden fixed inset-0 bg-black/70 z-[130] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white rounded-3xl max-w-3xl w-full max-h-[85vh] overflow-hidden flex flex-col modal">
+            
+            <div class="flex justify-between items-center px-8 py-5 border-b">
+                <h3 class="text-2xl font-semibold">Política de Cookies</h3>
+                <button onclick="closeCookiesModal()" class="text-3xl leading-none px-3">×</button>
+            </div>
+            
+            <div class="p-8 overflow-y-auto text-sm leading-relaxed text-[#5c4033]">
+                <p class="mb-4">En <strong>Aroma y Llama</strong> utilizamos cookies para mejorar la experiencia de navegación, analizar el tráfico del sitio y personalizar el contenido.</p>
+                
+                <h4 class="font-semibold mt-6 mb-2">¿Qué son las cookies?</h4>
+                <p class="mb-4">Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas una web. Sirven para recordar tus preferencias y mejorar el funcionamiento del sitio.</p>
+                
+                <h4 class="font-semibold mt-6 mb-2">Tipos de cookies que utilizamos</h4>
+                <ul class="list-disc pl-5 space-y-2 mb-4">
+                    <li><strong>Cookies necesarias:</strong> Imprescindibles para el funcionamiento básico de la web (ej. navegación y seguridad).</li>
+                    <li><strong>Cookies de análisis:</strong> Nos permiten entender cómo interactúan los usuarios con la web (Google Analytics u similares, si se activan).</li>
+                    <li><strong>Cookies de preferencias:</strong> Recuerdan tus elecciones (idioma, etc.).</li>
+                </ul>
+                
+                <h4 class="font-semibold mt-6 mb-2">¿Cómo gestionar las cookies?</h4>
+                <p class="mb-4">Puedes configurar tu navegador para bloquear o eliminar cookies. Ten en cuenta que algunas funciones de la web pueden dejar de funcionar correctamente si desactivas las cookies.</p>
+                
+                <h4 class="font-semibold mt-6 mb-2">Cookies de terceros</h4>
+                <p class="mb-4">Podemos utilizar servicios de terceros como Formspree (para el formulario de contacto) que pueden instalar sus propias cookies.</p>
+                
+                <h4 class="font-semibold mt-6 mb-2">Actualizaciones</h4>
+                <p>Esta política de cookies puede actualizarse. Te recomendamos revisarla periódicamente.</p>
+                
+                <p class="mt-6 text-xs text-[#8c6f5e]">Última actualización: Junio 2026</p>
+            </div>
+            
+            <div class="p-5 border-t bg-[#f9f5f0] text-center">
+                <button onclick="closeCookiesModal()" 
+                        class="px-8 py-2.5 rounded-2xl bg-[#5c4033] text-white font-medium">
+                    Entendido
                 </button>
             </div>
         </div>
@@ -1280,6 +1325,18 @@
             modal.classList.add('hidden');
         }
 
+        function showCookiesModal() {
+            const modal = document.getElementById('cookies-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeCookiesModal() {
+            const modal = document.getElementById('cookies-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
         function shareBlogArticle() {
             if (!currentBlogId) return;
             const article = blogArticles[currentBlogId];
@@ -1312,6 +1369,34 @@
         
         // Boot
         window.onload = init;
+
+        // Cookie Banner Logic
+        function showCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            if (!localStorage.getItem('cookiesAccepted')) {
+                banner.classList.remove('hidden');
+                banner.classList.add('flex');
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            const banner = document.getElementById('cookie-banner');
+            banner.classList.remove('flex');
+            banner.classList.add('hidden');
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookiesAccepted', 'false');
+            const banner = document.getElementById('cookie-banner');
+            banner.classList.remove('flex');
+            banner.classList.add('hidden');
+        }
+
+        // Show cookie banner on load
+        setTimeout(() => {
+            showCookieBanner();
+        }, 1500);
     </script>
 </body>
 </html>
